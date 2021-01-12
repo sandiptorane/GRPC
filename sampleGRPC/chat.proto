@@ -1,0 +1,13 @@
+syntax="proto3";
+
+package chat;
+
+//this file exposes our ChatService which features
+//a SayHello function which can be called by any gRPC client written in any language.
+message Message{
+  string body=1;
+}
+
+service chatService{
+  rpc SayHello(Message) returns (Message){}
+}
